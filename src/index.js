@@ -5,9 +5,13 @@ const { PORT } = require("./config/serverConfig");
 
 fastify.register(app);
 
+fastify.get("/health", async () => {
+  return { status: "ok" };
+});
+
 const startServer = async () => {
   try {
-    await fastify.listen({ port: PORT });
+    await fastify.listen({ port: PORT, host: "0.0.0.0" });
     console.log(`Server is listening on port http://localhost:${PORT}`);
 
     console.log(fastify.printRoutes());
