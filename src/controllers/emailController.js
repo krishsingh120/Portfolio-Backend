@@ -8,7 +8,7 @@ const emailController = async (req, reply) => {
       throw new Error("Some fields are missing");
     }
 
-    // console.log(req.server);
+    console.log(req.server);
 
     const sendMail = await req.server.emailService.sendMailService(req.body);
 

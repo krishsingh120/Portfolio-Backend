@@ -5,6 +5,7 @@ const { EMAIL_AUTH_USER } = require("../config/serverConfig");
 const sendMailService = async (emailDetails) => {
   try {
     const { name, email, subject, message } = emailDetails;
+    console.log(emailDetails, "inside service");
 
     // const mailResponse = await transport.sendMail({
     //   from: `"Portfolio Contact" <${EMAIL_AUTH_USER}>`,
@@ -44,7 +45,7 @@ const sendMailService = async (emailDetails) => {
         ${message}
       `,
 
-          html: `
+      html: `
       <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f6fb; padding:30px;">
         <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
 
@@ -84,7 +85,7 @@ const sendMailService = async (emailDetails) => {
   `,
     });
 
-    // console.log("mail id is: ", mailResponse.messageId);
+    console.log("mail id is: ", mailResponse.messageId);
 
     return mailResponse;
   } catch (error) {

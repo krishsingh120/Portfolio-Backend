@@ -14,7 +14,7 @@ const startServer = async () => {
     await fastify.listen({ port: PORT, host: "0.0.0.0" });
     console.log(`🚀 Server running on port ${PORT}`);
 
-    // console.log(fastify.printRoutes());
+    console.log(fastify.printRoutes());
 
     // fastify.log.info(`Server is listening on port http://localhost:${4200}`);
   } catch (err) {
