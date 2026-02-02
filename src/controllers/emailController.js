@@ -1,7 +1,7 @@
 const emailController = async (req, reply) => {
   try {
     // console.log("HEADERS:", req.headers);
-    // console.log("BODY:", req.body);
+    console.log("BODY:", req.body);
 
     const { name, email, subject, message } = req.body;
     if (!name || !email || !subject || !message) {
