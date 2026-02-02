@@ -36,55 +36,55 @@ const sendMailService = async (emailDetails) => {
       subject: subject || "New Contact Message",
 
       text: `
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
+        Name: ${name}
+        Email: ${email}
+        Subject: ${subject}
 
-Message:
-${message}
-  `,
+        Message:
+        ${message}
+      `,
 
-      html: `
-  <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f6fb; padding:30px;">
-    <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+          html: `
+      <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f6fb; padding:30px;">
+        <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
 
-      <!-- Header -->
-      <div style="background:linear-gradient(135deg,#4f46e5,#9333ea); padding:20px;">
-        <h2 style="color:#ffffff; margin:0; text-align:center;">
-          📩 New Contact Message
-        </h2>
-      </div>
+          <!-- Header -->
+          <div style="background:linear-gradient(135deg,#4f46e5,#9333ea); padding:20px;">
+            <h2 style="color:#ffffff; margin:0; text-align:center;">
+              📩 New Contact Message
+            </h2>
+          </div>
 
-      <!-- Body -->
-      <div style="padding:25px; color:#333;">
-        <p style="margin:0 0 12px;"><strong>Name:</strong> ${name}</p>
-        <p style="margin:0 0 12px;"><strong>Email:</strong> 
-          <a href="mailto:${email}" style="color:#4f46e5; text-decoration:none;">
-            ${email}
-          </a>
-        </p>
-        <p style="margin:0 0 20px;"><strong>Subject:</strong> ${subject}</p>
+          <!-- Body -->
+          <div style="padding:25px; color:#333;">
+            <p style="margin:0 0 12px;"><strong>Name:</strong> ${name}</p>
+            <p style="margin:0 0 12px;"><strong>Email:</strong> 
+              <a href="mailto:${email}" style="color:#4f46e5; text-decoration:none;">
+                ${email}
+              </a>
+            </p>
+            <p style="margin:0 0 20px;"><strong>Subject:</strong> ${subject}</p>
 
-        <div style="background:#f9fafb; padding:15px; border-radius:6px; border-left:4px solid #4f46e5;">
-          <p style="margin:0; white-space:pre-line;">
-            ${message}
-          </p>
+            <div style="background:#f9fafb; padding:15px; border-radius:6px; border-left:4px solid #4f46e5;">
+              <p style="margin:0; white-space:pre-line;">
+                ${message}
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div style="padding:15px; background:#f1f5f9; text-align:center; font-size:12px; color:#555;">
+            <p style="margin:0;">
+              This message was sent from your portfolio contact form.
+            </p>
+          </div>
+
         </div>
       </div>
-
-      <!-- Footer -->
-      <div style="padding:15px; background:#f1f5f9; text-align:center; font-size:12px; color:#555;">
-        <p style="margin:0;">
-          This message was sent from your portfolio contact form.
-        </p>
-      </div>
-
-    </div>
-  </div>
   `,
     });
 
-    console.log("mail id is: ", mailResponse.messageId);
+    // console.log("mail id is: ", mailResponse.messageId);
 
     return mailResponse;
   } catch (error) {

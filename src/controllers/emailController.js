@@ -1,14 +1,14 @@
 const emailController = async (req, reply) => {
   try {
-    console.log("HEADERS:", req.headers);
-    console.log("BODY:", req.body);
+    // console.log("HEADERS:", req.headers);
+    // console.log("BODY:", req.body);
 
     const { name, email, subject, message } = req.body;
     if (!name || !email || !subject || !message) {
       throw new Error("Some fields are missing");
     }
 
-    console.log(req.server);
+    // console.log(req.server);
 
     const sendMail = await req.server.emailService.sendMailService(req.body);
 
